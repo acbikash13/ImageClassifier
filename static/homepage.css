@@ -1,0 +1,60 @@
+      a {
+            font-size: 20px;
+            font-family: "Roboto Light", "Ubuntu Light", "Ubuntu", monospace;
+      }
+      .images-options-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+      .images-options {
+                max-width: 50%;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+        }
+
+        .images-options div {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .images-options img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .images-options div p {
+            font-family: "Roboto Mono", monospace;
+            font-size:x-large;
+            margin: 10px;
+            color: burlywood;
+        }
+        .app-description {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+        .app-description p {
+            color: black;
+            font-size: 20px;
+            font-family: "Roboto Light", "Ubuntu Light", "Ubuntu", monospace;
+            color: burlywood ;
+        }
+        footer{
+            background-color: black;
+            width: 100%;
+            height: 150px;
+            margin-top: 25px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
