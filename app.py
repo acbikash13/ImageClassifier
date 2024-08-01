@@ -47,7 +47,7 @@ def predictImage():
 
 if __name__ == '__main__':
     print("Starting the server")
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8181)
 
 from flask import Flask, render_template , request, jsonify
 from PIL import  Image
