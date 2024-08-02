@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template , request, jsonify
 from PIL import  Image
-from model import load_model, preprocess_image
+from model.model import load_model, preprocess_image
 import tensorflow as tf
 import numpy as np
 
