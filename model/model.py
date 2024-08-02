@@ -7,9 +7,7 @@ import os
 def load_model():
     #saved model path
     print("Entering in the load model")
-    model_path = './model/'
-    print("Files in model directory:", os.listdir(model_path))
-    model = tf.keras.models.load_model('./saved_model.h5',custom_objects=None , safe_mode = False)
+    model = tf.keras.models.load_model('saved_model.h5',custom_objects=None , safe_mode = False)
 
     print("model is ")
     return model
