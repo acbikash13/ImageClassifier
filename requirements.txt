@@ -4,3 +4,4 @@ tensorflow==2.17.0
 numpy==1.26.4
 gunicorn==22.0.0
 Werkzeug>=3.0.0
+h5py>=3.1.0
