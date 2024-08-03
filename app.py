@@ -1,13 +1,36 @@
 
 from flask import Flask, render_template , request, jsonify
 from PIL import  Image
-from model.model import load_model, preprocess_image
 import tensorflow as tf
 import numpy as np
-
+import tensorflow as tf
+import os
 
 app = Flask(__name__)
 
+
+def load_model():
+    #saved model path
+    print("Entering in the load model")
+    print("Current directory is " +  os.getcwd())
+    model = tf.keras.models.load_model('./saved_model.h5',custom_objects=None , safe_mode = False)
+    print("model is ")
+    return model
+
+def preprocess_image(image):
+    # resize the image
+    image_width = 264
+    image_heigth = 264
+    image =  image.resize((image_heigth,image_width))
+    #convert the image into numpy array
+    image_array = np.array(image)
+
+    #Normalize the image array
+    image_array = image_array / 255.0
+
+    # Add batch dimension
+    image_array = np.expand_dims(image_array, axis=0)
+    return image_array
 
 model =  load_model()
 
