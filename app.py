@@ -10,10 +10,11 @@ app = Flask(__name__)
 
 
 def load_model():
-    #saved model path
+     #saved model path
     print("Entering in the load model")
     print("Current directory is " +  os.getcwd())
-    model = tf.keras.models.load_model('./saved_model.h5',custom_objects=None , safe_mode = False)
+    model_path = os.path.join(os.getcwd(), 'saved_model.h5')
+    model = tf.keras.models.load_model(model_path,custom_objects=None , safe_mode = False)
     print("model is ")
     return model
 
