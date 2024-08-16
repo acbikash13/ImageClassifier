@@ -5,18 +5,39 @@ import tensorflow as tf
 import numpy as np
 import tensorflow as tf
 import os
+from azure.storage.blob import BlobServiceClient
 
 app = Flask(__name__)
+
+
+def download_model_from_azure_blob():
+    # azure storage account connection string
+    connection_string = 'DefaultEndpointsProtocol=https;AccountName=bikashmachinelearning;AccountKey=kKuOC103027PmcaWtyhtjDioNK2KVVVLYQfruBYtkKXOgua0kKwtEW+DOWGLTMPfAEueJiVoQd3A+AStACiGqA==;EndpointSuffix=core.windows.net'
+    container_name = 'imageclassification'
+    blob_name = 'saved_model.h5'
+    # make a blob servicec client
+    blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+    blob_client = blob_service_client.get_blob_client(container=container_name, blob=blob_name)
+    # Local path where the model will be saved
+    local_path = os.path.join(os.getcwd(), blob_name)
+    print("The local path si " + local_path)
+
+    # Download the model from Azure Blob Storage
+    with open(local_path, "wb") as download_file:
+        download_file.write(blob_client.download_blob().readall())
+        print("The model file is downloaded.")
+    return local_path
 
 
 def load_model():
      #saved model path
     print("Entering in the load model")
     print("Current directory is " +  os.getcwd())
-    model_path = os.path.join(os.getcwd(), 'saved_model.h5')
+    model_path = download_model_from_azure_blob()
     model = tf.keras.models.load_model(model_path,custom_objects=None , safe_mode = False)
-    print("model is ")
+    print("Model Successfully loaded...")
     return model
+
 
 def preprocess_image(image):
     # resize the image
