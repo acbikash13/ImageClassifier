@@ -10,7 +10,7 @@ Check out the live version of the app [here](https://classiffyimages-d4g0bednaaa
 - **Image Upload**: Users can upload images via the web interface.
 - **Real-Time Predictions**: The app instantly classifies the uploaded image into one of the predefined categories.
 - **Model**: Utilizes a CNN model trained on a large dataset of labeled images.
-- **Technology Stack**: Python, TensorFlow/Keras, Flask, HTML/CSS for front-end, and Docker for containerization.
+- **Technology Stack**: Python, TensorFlow/Keras, Flask, HTML/CSS for front-end
 
 ## Tech Stack
 
@@ -26,7 +26,7 @@ Check out the live version of the app [here](https://classiffyimages-d4g0bednaaa
 
 - Python 3.8 or higher
 - TensorFlow/Keras
-- Flask (or Django)
+- Flask 
 - OpenCV (optional for image preprocessing)
 - Docker (for containerization)
 - Git
@@ -34,5 +34,5 @@ Check out the live version of the app [here](https://classiffyimages-d4g0bednaaa
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/image-classification-app.git
+git clone https://github.com/acbikash13/ImageClassifier.git
 cd image-classification-app
