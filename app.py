@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 def download_model_from_azure_blob():
     # azure storage account connection string
-    connection_string = os.getenv('connection_string')
+    connection_string = "DefaultEndpointsProtocol=https;AccountName=appjob;AccountKey=QBrjqwJvqjvX5d2GIHjArBAoUdyvYz4jCfZfm6qq7ih8meagA4ABvepEi3MoYbNhOhhm8aZJfn8Z+AStAiJ0ow==;EndpointSuffix=core.windows.net"
     container_name = 'imagedetectioncontainer'
     blob_name = 'saved_model.h5'
     # make a blob servicec client
